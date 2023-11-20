@@ -2,8 +2,6 @@ package provider
 
 import "fmt"
 
-func main() {
+func providermain() {
     fmt.Println("Hello World")
-
-    
 }
