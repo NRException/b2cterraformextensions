@@ -29,6 +29,8 @@ On Linux:
 
 ## How to compile from source:
 
+- Clone this repo
+- Create a ./bin directory local to the cloned project
 - Ensure go1.24.3 (the current build target) is installed on your machine.
 - Run "make all" from the source project folder.
 
