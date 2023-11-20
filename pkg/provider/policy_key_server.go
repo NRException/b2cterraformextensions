@@ -14,7 +14,7 @@ func policyKey() *schema.Resource {
                 Delete: policyKeyDelete,
 
                 Schema: map[string]*schema.Schema{
-                        "uuid_count": &schema.Schema{
+                        "uuid": &schema.Schema{
                                 Type:     schema.TypeString,
                                 Required: true,
                         },
@@ -27,7 +27,8 @@ func policyKeyCreate(d *schema.ResourceData, m interface{}) error {
     uid := uuid.New().String()
     log.Println("Setting object Id " + uid)
     d.SetId(uuid.New().String())
-
+    
+    // Finally return the read resource...
     return policyKeyRead(d, m)
 }
 
