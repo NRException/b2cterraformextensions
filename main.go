@@ -1,7 +1,7 @@
 package main
 
 import (
-    "github.com/nrexception/tf-provider-concept/pkg/provider"
+    "github.com/nrexception/b2cterraformextensions/pkg/provider"
     "github.com/hashicorp/terraform-plugin-sdk/plugin"
     "github.com/hashicorp/terraform-plugin-sdk/terraform"
 )
