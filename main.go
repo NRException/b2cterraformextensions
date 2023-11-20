@@ -1,11 +1,18 @@
 package main
 
 import (
-    "fmt"
     "github.com/nrexception/tf-provider-concept/pkg/provider"
-
+    "github.com/hashicorp/terraform-plugin-sdk/plugin"
+    "github.com/hashicorp/terraform-plugin-sdk/terraform"
 )
 
+// Props to Infracloud on this one for the boilerplate and explaination...
+// https://www.infracloud.io/blogs/developing-terraform-custom-provider/
+
 func main() {
-    fmt.Println("Hello world! From provider")
+    plugin.Serve(&plugin.ServeOpts{
+            ProviderFunc: func() terraform.ResourceProvider {
+                return provider.BCExtensions()
+            },
+    })
 }
