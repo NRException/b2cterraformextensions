@@ -1,4 +1,4 @@
-module github.com/nrexception/tf-provider-concept
+module github.com/nrexception/b2cterraformextensions
 
 go 1.21.4
 
