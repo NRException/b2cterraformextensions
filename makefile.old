@@ -1,0 +1,20 @@
+host_name = battlestation
+namespace = b2cextensions
+type = main
+version = 0.0.1
+target = linux
+
+all: clean build install
+
+install:
+	mkdir -p ~/.terraform.d/plugins/$(host_name)/$(namespace)/$(type)/$(version)/$(target)
+	cp ./bin/terraform-provider-b2cextensions ~/.terraform.d/plugins/$(host_name)/$(namespace)/$(type)/$(version)/$(target)/terraform-provider-b2cextensions
+
+build: 
+	env GOOS=linux GOARCH=amd64 go build -o "./bin/terraform-provider-b2cextensions"
+	env GOOS=windows GOARCH=amd64 go build -o "./bin/terraform-provider-b2cextensions.exe"
+
+clean:
+	rm -f ./bin/*
+	rm -f ~/.terraform.d/plugins/$(host_name)/$(namespace)/$(type)/$(version)/linux/terraform-provider-b2cextensions
+
